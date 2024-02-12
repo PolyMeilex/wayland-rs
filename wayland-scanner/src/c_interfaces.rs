@@ -64,7 +64,7 @@ pub(crate) fn generate_interface(interface: &Interface) -> TokenStream {
         #requests
         #events
 
-        pub static mut #interface_ident: wayland_backend::protocol::wl_interface = wayland_backend::protocol::wl_interface {
+        pub static #interface_ident: wayland_backend::protocol::wl_interface = wayland_backend::protocol::wl_interface {
             name: #name_value as *const u8 as *const std::os::raw::c_char,
             version: #version_value,
             request_count: #request_count_value,
