@@ -16,6 +16,32 @@ pub mod idle_notify {
 }
 
 #[cfg(feature = "staging")]
+pub mod image_capture_source {
+    //! Image Capture Source Protocol
+    
+    #[allow(missing_docs)]
+    pub mod v1 {
+        wayland_protocol!(
+            "./protocols/staging/ext-image-capture-source/ext-image-capture-source-v1.xml",
+            [crate::ext::foreign_toplevel_list::v1]
+        );
+    }
+}
+
+#[cfg(feature = "staging")]
+pub mod image_copy_capture {
+    //! Image Copy Capture protocol
+
+    #[allow(missing_docs)]
+    pub mod v1 {
+        wayland_protocol!(
+            "./protocols/staging/ext-image-copy-capture/ext-image-copy-capture-v1.xml",
+            [crate::ext::image_capture_source::v1]
+        );
+    }
+}
+
+#[cfg(feature = "staging")]
 pub mod session_lock {
     //! This protocol allows for a privileged Wayland client to lock the session
     //! and display arbitrary graphics while the session is locked.
