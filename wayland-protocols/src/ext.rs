@@ -9,7 +9,7 @@ pub mod idle_notify {
     #[allow(missing_docs)]
     pub mod v1 {
         wayland_protocol!(
-            "./protocols/staging/ext-idle-notify/ext-idle-notify-v1.xml",
+            "./ext-idle-notify-v1.xml",
             []
         );
     }
